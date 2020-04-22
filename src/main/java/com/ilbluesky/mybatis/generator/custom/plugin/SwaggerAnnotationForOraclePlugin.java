@@ -71,7 +71,7 @@ public class SwaggerAnnotationForOraclePlugin extends PluginAdapter {
 	
 	private void addTopClassAnnotation(TopLevelClass topLevelClass, String comment) {
 		
-		String annotation = "@ApiModel(value = \"" + comment + "\")";
+		String annotation = "@ApiModel(\"" + comment + "\")";
 		topLevelClass.addAnnotation(annotation);
 		topLevelClass.addImportedType("io.swagger.annotations.ApiModel");
 		topLevelClass.addImportedType("io.swagger.annotations.ApiModelProperty");

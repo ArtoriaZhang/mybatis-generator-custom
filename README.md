@@ -26,3 +26,9 @@ Usage:
 
 1. Run App main method or run the jar packaged with dependencies using 'java -jar ...'. Be aware that pass '-configfile'
 parameter to runtime env.  
+
+
+##Concepts & Architecture
+
+1. ConfigurationParser.parseConfiguration(cinfigFile) load properties & plugin & context. This will also determine bunch of GENERATORS which to be use.;
+2. Looping in CONTEXT_TO_BE_RUN, handing each CONTEXT. Generating introspect tables, then generate the POJO of java client / mapper. Building up XML file.

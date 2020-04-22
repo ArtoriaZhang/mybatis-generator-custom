@@ -10,7 +10,7 @@ public class CustomJavaTypeResolverImpl extends JavaTypeResolverDefaultImpl {
 	
 	public CustomJavaTypeResolverImpl() {
 		super();
-		typeMap.put(Types.OTHER, new JdbcTypeInformation("NVARCHAR2", //$NON-NLS-1$
+		typeMap.put(Types.OTHER, new JdbcTypeInformation("NVARCHAR", //$NON-NLS-1$
 				new FullyQualifiedJavaType(String.class.getName())));
 	}
 
