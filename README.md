@@ -9,20 +9,20 @@ Usage:
 
 1. Add the following config snippet to your own MBG generator.xml
 
-~~~
-<generatorConfiguration>
-	...
-	<context ...>
+    ~~~
+    <generatorConfiguration>
         ...
-		    <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.SwaggerAnnotationForOraclePlugin" >
-		    	<property name="COLUMN_COMMENT_TABLE_NAME" value="ALL_COL_COMMENTS" />
-		    	<property name="TABLE_COMMENT_TABLE_NAME" value="ALL_TAB_COMMENTS" />
-    		</plugin>
-    	...
-    </context>
-    ...
-</generatorConfiguration>
-~~~
+        <context ...>
+            ...
+                <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.SwaggerAnnotationForOraclePlugin" >
+                    <property name="COLUMN_COMMENT_TABLE_NAME" value="ALL_COL_COMMENTS" />
+                    <property name="TABLE_COMMENT_TABLE_NAME" value="ALL_TAB_COMMENTS" />
+                </plugin>
+            ...
+        </context>
+        ...
+    </generatorConfiguration>
+    ~~~
 
 1. Run App main method or run the jar packaged with dependencies using 'java -jar ...'. Be aware that pass '-configfile'
 parameter to runtime env.  
