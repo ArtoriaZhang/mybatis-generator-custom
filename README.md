@@ -1,11 +1,11 @@
 # mybatis-generator-custom
 MBG custom plugin.
 
-This plugin can generate entity with swagger annotation which value comes from oracle comment. 
-
+Include some custom plugins and client generators.
+ 
 Usage:
 
-(Notice: This project need the the dependency of [Mybatis Generator](https://github.com/ArtoriaZhang/generator) in your local maven repository)
+(Notice: This project need the dependency of [Mybatis Generator](https://github.com/ArtoriaZhang/generator). You can install it in your local maven repository or add to your workplace as a dependence module.)
 
 1. Add the following config snippet to your own MBG generator.xml
 
@@ -30,5 +30,5 @@ parameter to runtime env.
 
 ##Concepts & Architecture
 
-1. ConfigurationParser.parseConfiguration(cinfigFile) load properties & plugin & context. This will also determine bunch of GENERATORS which to be use.;
+1. ConfigurationParser.parseConfiguration(configFile) load properties & plugin & context. This will also determine bunch of GENERATORS which to be use.;
 2. Looping in CONTEXT_TO_BE_RUN, handing each CONTEXT. Generating introspect tables, then generate the POJO of java client / mapper. Building up XML file.
