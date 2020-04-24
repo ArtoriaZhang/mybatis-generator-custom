@@ -23,11 +23,9 @@
 <generatorConfiguration>
   <properties resource="scripts/database.properties"/>
 
-  <context id="srm" targetRuntime="MyBatis3">
-    <property name="xmlFormatter" value="com.ilbluesky.mybatis.generator.custom.xmlgen.CustomXmlFormatter" />
+  <context id="srm" targetRuntime="MyBatis3" >
     <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
     <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.ChangeCountByExampleMethodReturnTypePlugin" />
-    <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.ChangeGeneratedXmlForAdayoSrmPlugin" />
     <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.SwaggerAnnotationForOraclePlugin" >
     	<property name="COLUMN_COMMENT_TABLE_NAME" value="ALL_COL_COMMENTS" />
     	<property name="TABLE_COMMENT_TABLE_NAME" value="ALL_TAB_COMMENTS" />
@@ -45,34 +43,22 @@
     <javaTypeResolver type="com.ilbluesky.mybatis.generator.custom.types.CustomJavaTypeResolverImpl">
     </javaTypeResolver>
 
-    <javaModelGenerator targetPackage="${targetPackage.model}" targetProject="MAVEN">
+    <javaModelGenerator targetPackage="com.els.huayang.delivery.entity" targetProject="MAVEN">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="${targetPackage.mapper}"  targetProject="MAVEN">
+    <sqlMapGenerator targetPackage="com.els.huayang.delivery.dao"  targetProject="MAVEN">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-<!--
-    <javaClientGenerator type="XMLMAPPER" targetPackage="${targetPackage.client}"  targetProject="MAVEN">
-      <property name="enableSubPackages" value="true" />
-    </javaClientGenerator>
--->
-    <javaClientGenerator
-        type="com.ilbluesky.mybatis.generator.custom.codegen.CustomJavaMapperGenerator"
-        targetPackage="${targetPackage.client}"  targetProject="MAVEN">
-
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.els.huayang.delivery.dao"  targetProject="MAVEN">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="t_base_company_recommend_form"
-        alias=""
-        domainObjectName="CompanyRecommendForm"
-        selectByExampleQueryId="true"
-    >
-        <property name="selectByExampleByPage" value="true"/>
-    </table>
+    <table tableName="t_base_company_recommend_form" 
+    	alias=""
+    	domainObjectName="CompanyRecommendForm"/>
 
     <table tableName="awful table" alias="A">
       <generatedKey column="CuStOmEr iD" sqlStatement="JDBC" />
