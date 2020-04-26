@@ -26,7 +26,7 @@
   <context id="srm" targetRuntime="MyBatis3">
     <property name="xmlFormatter" value="com.ilbluesky.mybatis.generator.custom.xmlgen.CustomXmlFormatter" />
     <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
-    <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.ChangeCountByExampleMethodReturnTypePlugin" />
+    <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.ChangeMapperClientForAdayoPlugin" />
     <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.ChangeGeneratedXmlForAdayoSrmPlugin" />
     <plugin type="com.ilbluesky.mybatis.generator.custom.plugin.SwaggerAnnotationForOraclePlugin" >
     	<property name="COLUMN_COMMENT_TABLE_NAME" value="ALL_COL_COMMENTS" />
