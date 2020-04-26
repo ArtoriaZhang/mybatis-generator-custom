@@ -71,7 +71,7 @@ public class SwaggerAnnotationForOraclePlugin extends PluginAdapter {
 	
 	private void addTopClassAnnotation(TopLevelClass topLevelClass, String comment) {
 		
-		String annotation = "@ApiModel(\"" + comment + "\")";
+		String annotation = "@ApiModel(value=\"" + comment + "\")";
 		topLevelClass.addAnnotation(annotation);
 		topLevelClass.addImportedType("io.swagger.annotations.ApiModel");
 		topLevelClass.addImportedType("io.swagger.annotations.ApiModelProperty");
@@ -128,7 +128,7 @@ public class SwaggerAnnotationForOraclePlugin extends PluginAdapter {
 			Map<String, String> columnCommentMap) {
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("@ApiModelProperty(value = \"");
+		sb.append("@ApiModelProperty(\"");
 		sb.append(columnCommentMap.get(introspectedColumn.getActualColumnName()));
 		sb.append("\")");
 		
