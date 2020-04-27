@@ -64,6 +64,7 @@ public class ChangeMapperClientForAdayoPlugin extends PluginAdapter {
 
         AbstractJavaModelPluginAdaptor modifier = new ModelExampleClassModifier(topLevelClass,
                 introspectedTable, this);
+        modifier.execute();
 
         return super.modelExampleClassGenerated(topLevelClass, introspectedTable);
     }
