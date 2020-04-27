@@ -24,4 +24,9 @@ public abstract class AbstractXmlPluginAdaptor extends AbstractPluginAdaptor {
         this.answer.getAttributes().clear();
         this.answer.getElements().clear();
     }
+
+    @Override
+    public void execute() {
+
+    }
 }
