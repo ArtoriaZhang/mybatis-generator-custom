@@ -1,6 +1,8 @@
 package com.ilbluesky.mybatis.generator.custom.plugin;
 
+import com.ilbluesky.mybatis.generator.custom.codegen.elements.AbstractJavaModelPluginAdaptor;
 import com.ilbluesky.mybatis.generator.custom.codegen.elements.AbstractMapperPluginAdaptor;
+import com.ilbluesky.mybatis.generator.custom.codegen.elements.ModelExampleClassModifier;
 import com.ilbluesky.mybatis.generator.custom.codegen.elements.SelectByExampleByPageAdder;
 import java.util.List;
 import org.mybatis.generator.api.IntrospectedTable;
@@ -8,6 +10,7 @@ import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.java.Interface;
 import org.mybatis.generator.api.dom.java.Method;
+import org.mybatis.generator.api.dom.java.TopLevelClass;
 
 public class ChangeMapperClientForAdayoPlugin extends PluginAdapter {
 
@@ -46,5 +49,22 @@ public class ChangeMapperClientForAdayoPlugin extends PluginAdapter {
         adder.execute();
 
         return super.clientGenerated(interfaze, introspectedTable);
+    }
+
+
+    /**
+     * 改变由MBG生成的java example class
+     * @param topLevelClass
+     * @param introspectedTable
+     * @return
+     */
+    @Override
+    public boolean modelExampleClassGenerated(TopLevelClass topLevelClass,
+            IntrospectedTable introspectedTable) {
+
+        AbstractJavaModelPluginAdaptor modifier = new ModelExampleClassModifier(topLevelClass,
+                introspectedTable, this);
+
+        return super.modelExampleClassGenerated(topLevelClass, introspectedTable);
     }
 }

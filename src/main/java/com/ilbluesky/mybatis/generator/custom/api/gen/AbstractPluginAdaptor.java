@@ -18,4 +18,6 @@ public abstract class AbstractPluginAdaptor {
         this.context = adapter.getContext();
         this.properties = adapter.getProperties();
     }
+
+    public abstract void execute();
 }

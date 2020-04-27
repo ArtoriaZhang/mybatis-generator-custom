@@ -23,5 +23,4 @@ public abstract class AbstractMapperPluginAdaptor extends AbstractPluginAdaptor 
         this.interfaze = interfaze;
     }
 
-    public abstract void execute();
 }
