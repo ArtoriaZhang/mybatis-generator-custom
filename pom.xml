@@ -15,13 +15,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hsqldb.version>2.5.0</hsqldb.version>
 		<oracle.version>RELEASE2</oracle.version>
+		<MBG-core.version>1.4.1-SNAPSHOT</MBG-core.version>
+		<mysql-jdbc.version>8.0.22</mysql-jdbc.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.mybatis.generator</groupId>
 			<artifactId>mybatis-generator-core</artifactId>
-			<version>${project.version}</version>
+			<version>${MBG-core.version}</version>
 		</dependency>
 	    <dependency>
 	      <groupId>org.hsqldb</groupId>
@@ -39,6 +41,20 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.swagger/swagger-annotations -->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-jdbc.version}</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
